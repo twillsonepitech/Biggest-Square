@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include "define.h"
 #include "functions.h"
+#include "../Lib-IO/includes/io_stream.h"
 
 void change_char_in_map(uint8_t **dbl_ptr_buffer_map)
 {
@@ -119,7 +120,6 @@ uint32_t execute_biggest_square(const uint8_t *filename)
     return_from_function = error_handling(dbl_ptr_buffer_map);
     if (EXIT_FAILURE == return_from_function)
     {
-        print_map((const uint8_t **) dbl_ptr_buffer_map);
         free_dbl_string_ptr(dbl_ptr_buffer_map);
         return EXIT_FAILURE;
     }

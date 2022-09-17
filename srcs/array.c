@@ -24,7 +24,7 @@ uint64_t length_dbl_string_ptr(uint8_t **dbl_string_ptr)
     return __i;
 }
 
-void print_map(const uint8_t **dbl_string_ptr)
+void print_dbl_string_ptr(const uint8_t **dbl_string_ptr)
 {
     uint64_t __i;
 

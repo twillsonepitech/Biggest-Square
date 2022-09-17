@@ -133,7 +133,7 @@ uint64_t length_dbl_string_ptr(const uint8_t **dbl_string_ptr);
  * 
  * @param dbl_string_ptr 2d array. (MUST HAVE NULL AT THE END)
  */
-void print_map(const uint8_t **dbl_string_ptr);
+void print_dbl_string_ptr(const uint8_t **dbl_string_ptr);
 
 /**
  * @brief Free a 2d array.
