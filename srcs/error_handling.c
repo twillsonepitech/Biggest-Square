@@ -18,7 +18,7 @@
 
 #define FIRST_LINE_FILE (0)
 
-uint32_t check_first_line_file(const uint8_t *lineptr, uint64_t *nb_lines)
+uint8_t check_first_line_file(const uint8_t *lineptr, uint64_t *nb_lines)
 {
     uint8_t *endptr;
 
@@ -47,7 +47,7 @@ uint32_t check_first_line_file(const uint8_t *lineptr, uint64_t *nb_lines)
     return EXIT_SUCCESS;
 }
 
-uint32_t check_nb_lines(const uint8_t **dbl_ptr_buffer_map, uint64_t nb_lines)
+uint8_t check_nb_lines(const uint8_t **dbl_ptr_buffer_map, uint64_t nb_lines)
 {
     uint64_t length_dbl_ptr_buffer_map;
 
@@ -60,7 +60,7 @@ uint32_t check_nb_lines(const uint8_t **dbl_ptr_buffer_map, uint64_t nb_lines)
     return EXIT_SUCCESS;
 }
 
-uint32_t check_for_characters_in_lines(const uint8_t **dbl_ptr_buffer_map)
+uint8_t check_for_characters_in_lines(const uint8_t **dbl_ptr_buffer_map)
 {
     uint64_t __i;
     uint64_t __j;
@@ -83,7 +83,7 @@ uint32_t check_for_characters_in_lines(const uint8_t **dbl_ptr_buffer_map)
     return EXIT_SUCCESS;
 }
 
-uint32_t check_for_same_lines_length(const uint8_t **dbl_ptr_buffer_map)
+uint8_t check_for_same_lines_length(const uint8_t **dbl_ptr_buffer_map)
 {
     uint64_t __i;
     uint64_t length_lineptr;
@@ -104,7 +104,7 @@ uint32_t check_for_same_lines_length(const uint8_t **dbl_ptr_buffer_map)
     return EXIT_SUCCESS;
 }
 
-uint32_t error_handling(uint8_t **dbl_ptr_buffer_map)
+uint8_t error_handling(uint8_t **dbl_ptr_buffer_map)
 {
     int32_t return_from_function;
     uint64_t nb_lines;

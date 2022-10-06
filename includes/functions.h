@@ -18,9 +18,9 @@
  * the biggest square on a map.
  * 
  * @param filename filename path given in arguments.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t execute_biggest_square(const uint8_t *filename);
+uint8_t execute_biggest_square(const uint8_t *filename);
 
 /**
  * @brief Change the map '.' to 1 and 'o' to 0 to make algo
@@ -36,9 +36,9 @@ void change_char_in_map(uint8_t **dbl_ptr_buffer_map);
  * 
  * @param dbl_ptr_buffer_map Map in a 2d array.
  * @param index_biggest_square Structure that contains the range of the biggest square.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square);
+uint8_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square);
 
 /**
  * @brief Print the biggest square into terminal.
@@ -76,9 +76,9 @@ void manage_algorithm(uint8_t *ptr_char_to_be_changed, uint8_t x, uint8_t y, uin
  * @brief Handle errors in map.
  * 
  * @param dbl_ptr_buffer_map Map in a 2d array.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t error_handling(uint8_t **dbl_ptr_buffer_map);
+uint8_t error_handling(uint8_t **dbl_ptr_buffer_map);
 
 /**
  * @brief The first line in map must be a digit.
@@ -87,36 +87,36 @@ uint32_t error_handling(uint8_t **dbl_ptr_buffer_map);
  * 
  * @param lineptr ptr to the first line of map.
  * @param nb_lines if the first line is a digit, this variable will be initialized.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t check_first_line_file(const uint8_t *lineptr, uint64_t *nb_lines);
+uint8_t check_first_line_file(const uint8_t *lineptr, uint64_t *nb_lines);
 
 /**
  * @brief Check if the number of lines is correct according to the variable \nb_lines.
  * 
  * @param dbl_ptr_buffer_map Map in a 2d array.
  * @param nb_lines Number of total lines in map.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t check_nb_lines(const uint8_t **dbl_ptr_buffer_map, uint64_t nb_lines);
+uint8_t check_nb_lines(const uint8_t **dbl_ptr_buffer_map, uint64_t nb_lines);
 
 /**
  * @brief Only '.', 'o' and '\n' are allowed in the file.
  * So we check that in this function.
  * 
  * @param dbl_ptr_buffer_map Map in a 2d array.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t check_for_characters_in_lines(const uint8_t **dbl_ptr_buffer_map);
+uint8_t check_for_characters_in_lines(const uint8_t **dbl_ptr_buffer_map);
 
 /**
  * @brief All lines must have the same length.
  * Here we take the first line and compare it to the other lines length.
  * 
  * @param dbl_ptr_buffer_map Map in a 2d array.
- * @return uint32_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
+ * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint32_t check_for_same_lines_length(const uint8_t **dbl_ptr_buffer_map);
+uint8_t check_for_same_lines_length(const uint8_t **dbl_ptr_buffer_map);
 
 // array.c
 

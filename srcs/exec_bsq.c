@@ -40,7 +40,7 @@ void change_char_in_map(uint8_t **dbl_ptr_buffer_map)
     }
 }
 
-uint32_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square)
+uint8_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square)
 {
     uint32_t __i;
     uint32_t __j;
@@ -106,7 +106,7 @@ void print_biggest_square_in_map(const uint8_t **dbl_ptr_buffer_map, struct inde
     }
 }
 
-uint32_t execute_biggest_square(const uint8_t *filename)
+uint8_t execute_biggest_square(const uint8_t *filename)
 {
     int32_t return_from_function;
     uint8_t **dbl_ptr_buffer_map;
