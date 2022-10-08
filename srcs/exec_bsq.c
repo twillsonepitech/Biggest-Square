@@ -40,19 +40,13 @@ void change_char_in_map(uint8_t **dbl_ptr_buffer_map)
     }
 }
 
-uint8_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square)
+void find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square)
 {
     uint32_t __i;
     uint32_t __j;
     uint32_t __limit;
-    void *ptr_return_from_function;
 
-    ptr_return_from_function = memset(index_biggest_square, INIT_STRUCT, sizeof(struct index_biggest_square_s));
-    if (NULL == ptr_return_from_function)
-    {
-        LOG_ERROR("memset() function: FAILURE.");
-        return EXIT_FAILURE;
-    }
+    (void) memset(index_biggest_square, INIT_STRUCT, sizeof(struct index_biggest_square_s));
     __i = INIT_INTEGER;
     __limit = INIT_INTEGER;
     while (dbl_ptr_buffer_map[__i] != NULL)
@@ -71,7 +65,6 @@ uint8_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct in
         }
         __i++;
     }
-    return EXIT_SUCCESS;
 }
 
 void print_biggest_square_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s index_biggest_square)
@@ -125,11 +118,7 @@ uint8_t execute_biggest_square(const uint8_t *filename)
     }
     change_char_in_map(&dbl_ptr_buffer_map[ONE]);
     biggest_square_algorithm(&dbl_ptr_buffer_map[ONE]);
-    return_from_function = find_biggest_number_in_map((const uint8_t **) &dbl_ptr_buffer_map[ONE], &index_biggest_square);
-    if (EXIT_FAILURE == return_from_function)
-    {
-        return EXIT_FAILURE;
-    }
+    find_biggest_number_in_map((const uint8_t **) &dbl_ptr_buffer_map[ONE], &index_biggest_square);
     print_biggest_square_in_map((const uint8_t **) &dbl_ptr_buffer_map[ONE], index_biggest_square);
     free_dbl_string_ptr(dbl_ptr_buffer_map);
     return EXIT_SUCCESS;

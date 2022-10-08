@@ -36,9 +36,8 @@ void change_char_in_map(uint8_t **dbl_ptr_buffer_map);
  * 
  * @param dbl_ptr_buffer_map Map in a 2d array.
  * @param index_biggest_square Structure that contains the range of the biggest square.
- * @return uint8_t EXIT_SUCCESS(0) in case of success / EXIT_FAILURE(1) in case of failure.
  */
-uint8_t find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square);
+void find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square);
 
 /**
  * @brief Print the biggest square into terminal.
