@@ -27,24 +27,24 @@ void manage_algorithm(uint8_t *ptr_char_to_be_changed, uint8_t x, uint8_t y, uin
 
 void biggest_square_algorithm(uint8_t **dbl_ptr_buffer_map)
 {
-    uint64_t __i;
-    uint64_t __j;
+    uint64_t i;
+    uint64_t j;
 
-    __i = INIT_INTEGER + ONE;
-    while (dbl_ptr_buffer_map[__i] != NULL)
+    i = INIT_INTEGER + ONE;
+    while (dbl_ptr_buffer_map[i] != NULL)
     {
-        __j = INIT_INTEGER + ONE;
-        while (dbl_ptr_buffer_map[__i][__j] != '\0')
+        j = INIT_INTEGER + ONE;
+        while (dbl_ptr_buffer_map[i][j] != '\0')
         {
-            if (dbl_ptr_buffer_map[__i][__j] != (ZERO + '0'))
+            if (dbl_ptr_buffer_map[i][j] != (ZERO + '0'))
             {
-                manage_algorithm(&dbl_ptr_buffer_map[__i][__j],
-                    dbl_ptr_buffer_map[__i - ONE][__j],
-                    dbl_ptr_buffer_map[__i][__j - ONE],
-                    dbl_ptr_buffer_map[__i - ONE][__j - ONE]);
+                manage_algorithm(&dbl_ptr_buffer_map[i][j],
+                    dbl_ptr_buffer_map[i - ONE][j],
+                    dbl_ptr_buffer_map[i][j - ONE],
+                    dbl_ptr_buffer_map[i - ONE][j - ONE]);
             }
-            __j++;
+            j++;
         }
-        __i++;
+        i++;
     }    
 }

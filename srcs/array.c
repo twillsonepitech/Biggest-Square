@@ -14,37 +14,37 @@
 
 uint64_t length_dbl_string_ptr(uint8_t **dbl_string_ptr)
 {
-    uint64_t __i;
+    uint64_t i;
 
-    __i = INIT_INTEGER;
-    while (dbl_string_ptr[__i] != NULL)
+    i = INIT_INTEGER;
+    while (dbl_string_ptr[i] != NULL)
     {
-        __i++;
+        i++;
     }
-    return __i;
+    return i;
 }
 
 void print_dbl_string_ptr(const uint8_t **dbl_string_ptr)
 {
-    uint64_t __i;
+    uint64_t i;
 
-    __i = INIT_INTEGER;
-    while (dbl_string_ptr[__i] != NULL)
+    i = INIT_INTEGER;
+    while (dbl_string_ptr[i] != NULL)
     {
-        dprintf(1, "[%ld]: [%s]\n", __i, dbl_string_ptr[__i]);
-        __i++;
+        dprintf(1, "[%ld]: [%s]\n", i, dbl_string_ptr[i]);
+        i++;
     }
 }
 
 void free_dbl_string_ptr(uint8_t **dbl_string_ptr)
 {
-    uint64_t __i;
+    uint64_t i;
 
-    __i = INIT_INTEGER;
-    while (dbl_string_ptr[__i] != NULL)
+    i = INIT_INTEGER;
+    while (dbl_string_ptr[i] != NULL)
     {
-        free(dbl_string_ptr[__i]);
-        __i++;
+        free(dbl_string_ptr[i]);
+        i++;
     }
     free(dbl_string_ptr);
 }

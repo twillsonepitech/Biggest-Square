@@ -17,74 +17,74 @@
 
 void change_char_in_map(uint8_t **dbl_ptr_buffer_map)
 {
-    uint64_t __i;
-    uint64_t __j;
+    uint64_t i;
+    uint64_t j;
 
-    __i = INIT_INTEGER;
-    while (dbl_ptr_buffer_map[__i] != NULL)
+    i = INIT_INTEGER;
+    while (dbl_ptr_buffer_map[i] != NULL)
     {
-        __j = INIT_INTEGER;
-        while (dbl_ptr_buffer_map[__i][__j] != '\0')
+        j = INIT_INTEGER;
+        while (dbl_ptr_buffer_map[i][j] != '\0')
         {
-            if (dbl_ptr_buffer_map[__i][__j] == '.')
+            if (dbl_ptr_buffer_map[i][j] == '.')
             {
-                dbl_ptr_buffer_map[__i][__j] = ONE + '0';
+                dbl_ptr_buffer_map[i][j] = ONE + '0';
             }
             else
             {
-                dbl_ptr_buffer_map[__i][__j] = ZERO + '0';
+                dbl_ptr_buffer_map[i][j] = ZERO + '0';
             }
-            __j++;
+            j++;
         }
-        __i++;
+        i++;
     }
 }
 
 void find_biggest_number_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s *index_biggest_square)
 {
-    uint32_t __i;
-    uint32_t __j;
-    uint32_t __limit;
+    uint32_t i;
+    uint32_t j;
+    uint32_t limit;
 
     (void) memset(index_biggest_square, INIT_STRUCT, sizeof(struct index_biggest_square_s));
-    __i = INIT_INTEGER;
-    __limit = INIT_INTEGER;
-    while (dbl_ptr_buffer_map[__i] != NULL)
+    i = INIT_INTEGER;
+    limit = INIT_INTEGER;
+    while (dbl_ptr_buffer_map[i] != NULL)
     {
-        __j = INIT_INTEGER;
-        while (dbl_ptr_buffer_map[__i][__j] != '\0')
+        j = INIT_INTEGER;
+        while (dbl_ptr_buffer_map[i][j] != '\0')
         {
-            if (dbl_ptr_buffer_map[__i][__j] > __limit)
+            if (dbl_ptr_buffer_map[i][j] > limit)
             {
-                __limit = dbl_ptr_buffer_map[__i][__j];
-                index_biggest_square->__limit = __limit;
-                index_biggest_square->__i = __i;
-                index_biggest_square->__j = __j;
+                limit = dbl_ptr_buffer_map[i][j];
+                index_biggest_square->limit = limit;
+                index_biggest_square->i = i;
+                index_biggest_square->j = j;
             }
-            __j++;
+            j++;
         }
-        __i++;
+        i++;
     }
 }
 
 void print_biggest_square_in_map(const uint8_t **dbl_ptr_buffer_map, struct index_biggest_square_s index_biggest_square)
 {
-    uint32_t __i;
-    uint32_t __j;
+    uint32_t i;
+    uint32_t j;
 
-    __i = INIT_INTEGER;
-    while (dbl_ptr_buffer_map[__i] != NULL)
+    i = INIT_INTEGER;
+    while (dbl_ptr_buffer_map[i] != NULL)
     {
-        __j = INIT_INTEGER;
-        while (dbl_ptr_buffer_map[__i][__j] != '\0')
+        j = INIT_INTEGER;
+        while (dbl_ptr_buffer_map[i][j] != '\0')
         {
-            if ((ZERO + '0') == dbl_ptr_buffer_map[__i][__j])
+            if ((ZERO + '0') == dbl_ptr_buffer_map[i][j])
             {
                 fprintf(stdout, "%c", 'o');
             }
-            else if ((int32_t)(__i) > (int32_t)(index_biggest_square.__i - (index_biggest_square.__limit - '0'))
-                && (int32_t)(__j) > (int32_t)(index_biggest_square.__j - (index_biggest_square.__limit - '0'))
-                && __i <= index_biggest_square.__i && __j <= index_biggest_square.__j)
+            else if ((int32_t)(i) > (int32_t)(index_biggest_square.i - (index_biggest_square.limit - '0'))
+                && (int32_t)(j) > (int32_t)(index_biggest_square.j - (index_biggest_square.limit - '0'))
+                && i <= index_biggest_square.i && j <= index_biggest_square.j)
             {
                 fprintf(stdout, "%c", 'x');
             }
@@ -92,10 +92,10 @@ void print_biggest_square_in_map(const uint8_t **dbl_ptr_buffer_map, struct inde
             {
                 fprintf(stdout, "%c", '.');
             }
-            __j++;
+            j++;
         }
         fprintf(stdout, "%c", '\n');
-        __i++;
+        i++;
     }
 }
 

@@ -34,4 +34,4 @@
 #include <stdio.h>
 #define LOG_ERROR(message)      fprintf(stderr, "[\033[0;31mERROR\033[0m]\t[MESSAGE: %s].\n", message)
 
-struct index_biggest_square_s { uint32_t __i; uint32_t __j; uint32_t __limit; };
+struct index_biggest_square_s { uint32_t i; uint32_t j; uint32_t limit; };

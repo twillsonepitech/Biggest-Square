@@ -62,44 +62,44 @@ uint8_t check_nb_lines(const uint8_t **dbl_ptr_buffer_map, uint64_t nb_lines)
 
 uint8_t check_for_characters_in_lines(const uint8_t **dbl_ptr_buffer_map)
 {
-    uint64_t __i;
-    uint64_t __j;
+    uint64_t i;
+    uint64_t j;
 
-    __i = INIT_INTEGER;
-    while (dbl_ptr_buffer_map[__i] != NULL)
+    i = INIT_INTEGER;
+    while (dbl_ptr_buffer_map[i] != NULL)
     {
-        __j = INIT_INTEGER;
-        while (dbl_ptr_buffer_map[__i][__j] != '\0')
+        j = INIT_INTEGER;
+        while (dbl_ptr_buffer_map[i][j] != '\0')
         {
-            if (dbl_ptr_buffer_map[__i][__j] != '.' && dbl_ptr_buffer_map[__i][__j] != 'o')
+            if (dbl_ptr_buffer_map[i][j] != '.' && dbl_ptr_buffer_map[i][j] != 'o')
             {
                 LOG_ERROR("Bad character founded in file (must be 'o' or '.' only).");
                 return EXIT_FAILURE;
             }
-            __j++;
+            j++;
         }
-        __i++;
+        i++;
     }
     return EXIT_SUCCESS;
 }
 
 uint8_t check_for_same_lines_length(const uint8_t **dbl_ptr_buffer_map)
 {
-    uint64_t __i;
+    uint64_t i;
     uint64_t length_lineptr;
     uint64_t length_curr_lineptr;
 
     length_lineptr = strlen((const char *)dbl_ptr_buffer_map[ZERO]);
-    __i = INIT_INTEGER + ONE;
-    while (dbl_ptr_buffer_map[__i] != NULL)
+    i = INIT_INTEGER + ONE;
+    while (dbl_ptr_buffer_map[i] != NULL)
     {
-        length_curr_lineptr = strlen((const char *)dbl_ptr_buffer_map[__i]);
+        length_curr_lineptr = strlen((const char *)dbl_ptr_buffer_map[i]);
         if (length_lineptr != length_curr_lineptr)
         {
             LOG_ERROR("Lines are not same length.");
             return EXIT_FAILURE;
         }
-        __i++;
+        i++;
     }
     return EXIT_SUCCESS;
 }
